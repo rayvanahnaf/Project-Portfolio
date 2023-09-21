@@ -350,10 +350,12 @@ span {
 }
 
 .project-container {
-    display: flex;
+    display: grid;
     justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto)); 
     align-items: center;
     gap: 2.5rem;
+    margin: 50px;
 }
 
 .project-container .project-box {
