@@ -350,7 +350,7 @@ span {
 }
 
 .project-container {
-    display: grid;
+    display: flex;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(250px, auto)); 
     align-items: center;
