@@ -258,17 +258,17 @@ span {
 
 .portofolio {
     background: var(--second-bg-color);
-    
+
 }
 
 .portofolio h2 {
     margin-bottom: 4rem;
-    
+
 }
 
 .portofolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
     justify-content: center;
     gap: 2.5rem;
 }
@@ -280,7 +280,7 @@ span {
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    
+
 }
 
 .portofolio-box img {
@@ -315,7 +315,7 @@ span {
 
 .portofolio-layer h4 {
     font-size: 3rem;
-    
+
 }
 
 .portofolio-layer p {
@@ -341,18 +341,18 @@ span {
 /* project section */
 .project {
     background: var(--second-bg-color);
-    
+
 }
 
 .project h2 {
     margin-bottom: 4rem;
-    
+
 }
 
 .project-container {
     display: flex;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
     align-items: center;
     gap: 2.5rem;
     margin: 50px;
@@ -365,7 +365,7 @@ span {
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    
+
 }
 
 .project-box img {
@@ -377,7 +377,7 @@ span {
     transform: scale(1.1);
 }
 
-.project-box{
+.project-box {
     position: absolute;
     width: 390px;
     height: 260px;
@@ -406,7 +406,7 @@ span {
 
 .project-layer h4 {
     font-size: 3rem;
-    
+
 }
 
 .project-layer p {
@@ -581,9 +581,10 @@ span {
 }
 
 @media (max-width:1060px) {
-    .home{
+    .home {
         background-position: right;
     }
+
     .about {
         grid-template-columns: 1fr;
     }
@@ -667,34 +668,80 @@ span {
         gap: 3rem;
     }
 
-    .in i{
+    .in i {
         font-size: 80px;
     }
 
-    .in h4{
+    .in h4 {
         font-size: 20px;
     }
 }
 
 @media (max-width:460px) {
-    :root{
+    :root {
         --h1-font: 3.5rem;
         --h2-font: 2.5rem;
         --p-font: 15px;
     }
 
-    .hero-text h4{
+    .hero-text h4 {
         font-size: 16px;
         word-spacing: 7px;
     }
-.portofolio-box{
-    width: 50vh;
+
+    .portofolio-box {
+        width: 50vh;
+    }
+
+    .home {
+        opacity: 0.6;
+    }
 }
 
-.home{
-    opacity: 0.6;
+
+
+/* === removing default button style ===*/
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
 }
+
+/* button styling */
+.button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --animation-color: #37FF8B;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
+/* this is the text, when you hover on button */
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
 
-
+/* hover */
+.button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+}
